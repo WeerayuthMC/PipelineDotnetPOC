@@ -32,7 +32,7 @@ jobs:
   deploy:
     runs-on: iis
     steps:
-    - uses: actions/download-artifact@v2.1.1
     - name: Download a Build Artifact
+      uses: actions/download-artifact@v2.1.1
       with:
         name: WebSite
