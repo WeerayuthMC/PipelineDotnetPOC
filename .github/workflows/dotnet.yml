@@ -24,6 +24,10 @@ jobs:
     runs-on: dev
     steps:
     - uses: actions/checkout@v3
+    - name: Dir
+      run: dir
+    - name: Restore dependencies
+      run: dotnet restore
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
@@ -31,4 +35,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish WebApplicationPipeline/WebApplicationPipeline.csproj /p:configuration="Release"
+      run: dotnet publish PipelineDotnetPOC/WebApplicationPipeline/WebApplicationPipeline.csproj /p:configuration="Release"
