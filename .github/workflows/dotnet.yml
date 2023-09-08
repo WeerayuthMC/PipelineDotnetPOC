@@ -28,3 +28,11 @@ jobs:
         name: WebSite
         path: website
         retention-days: 10
+        
+  deploy:
+    runs-on: iis
+    steps:
+    - uses: actions/download-artifact@v2.1.1
+    - name: Download a Build Artifact
+      with:
+        name: WebSite
