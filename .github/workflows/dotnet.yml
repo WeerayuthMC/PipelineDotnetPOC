@@ -21,4 +21,9 @@ jobs:
     - name: Test
       run: dotnet test WebApplicationPipeline --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish WebApplicationPipeline /p:configuration="Release"
+      run: dotnet publish WebApplicationPipeline/WebApplicationPipeline.csproj -c Release -o website
+    - name: Archive code
+      uses: actions/upload-artifact@v3
+      with:
+        name: code-coverage-report
+        path: output/test/code-coverage.html
