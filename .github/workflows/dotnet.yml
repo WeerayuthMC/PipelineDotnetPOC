@@ -37,4 +37,8 @@ jobs:
       uses: actions/download-artifact@v2.1.1
       with:
         name: WebSite
-        path: C:\inetpub\www\ThaiId
+    - name: Stop IIS
+      run: |
+        iisreset /stop
+        Copy-Item ./* C:/inetpub/www/ThaiId -Recurse -Force
+        iisreset /start
