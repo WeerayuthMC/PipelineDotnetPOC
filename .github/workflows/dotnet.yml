@@ -42,4 +42,4 @@ jobs:
     - name: Deploy
       run: xcopy /e /v /a /y *.* C:\inetpub\www\ThaiId
     - name: Start IIS
-      run: iisreset /start
+      run: '%SYSTEMROOT%\System32\inetsrv\appcmd start apppool /apppool.name:"Demo"'
