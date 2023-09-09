@@ -38,8 +38,8 @@ jobs:
       with:
         name: WebSite
     - name: Stop IIS
-      run: '%SYSTEMROOT%\System32\inetsrv\appcmd stop apppool /apppool.name:"Demo"'
+      run: 'C:\Windows\System32\inetsrv\appcmd stop apppool /apppool.name:"Demo"'
     - name: Deploy
       run: xcopy /e /v /a /y *.* C:\inetpub\www\ThaiId
     - name: Start IIS
-      run: '%SYSTEMROOT%\System32\inetsrv\appcmd start apppool /apppool.name:"Demo"'
+      run: 'C:\Windows\System32\inetsrv\appcmd start apppool /apppool.name:"Demo"'
