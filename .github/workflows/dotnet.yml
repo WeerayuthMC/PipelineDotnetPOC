@@ -38,7 +38,7 @@ jobs:
       with:
         name: WebSite
     - name: Stop IIS
-      run: iisreset /stop
+      run: '%SYSTEMROOT%\System32\inetsrv\appcmd stop apppool /apppool.name:"Demo"'
     - name: Deploy
       run: xcopy /e /v /a /y *.* C:\inetpub\www\ThaiId
     - name: Start IIS
