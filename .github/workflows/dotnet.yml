@@ -40,6 +40,6 @@ jobs:
     - name: Stop IIS
       run: iisreset /stop
     - name: Deploy
-      run: copy *.* C:\inetpub\www\ThaiId
+      run: xcopy /e /v /a /y *.* C:\inetpub\www\ThaiId
     - name: Start IIS
       run: iisreset /start
